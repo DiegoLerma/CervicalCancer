@@ -123,6 +123,53 @@ The API will respond with a JSON object indicating the results of the different 
 }
 ```
 
+### Interpretation
+
+The API returns a prediction indicating the results of four different medical tests used to assess the risk of cervical cancer. Each test can have a result of 0 (negative) or 1 (positive). Here is what each result means:
+
+Hinselmann Test (Hinselmann):
+
+1: The Hinselmann test result is positive, indicating the presence of abnormal cells that might suggest cervical cancer.
+0: The Hinselmann test result is negative, indicating no abnormal cells were detected.
+Schiller Test (Schiller):
+
+1: The Schiller test result is positive, suggesting abnormal changes in the cervical cells that could indicate cancer or precancerous conditions.
+0: The Schiller test result is negative, indicating no abnormal changes were detected.
+Citology (Pap Smear) Test (Citology):
+
+1: The Citology test result is positive, showing the presence of abnormal cells that might indicate cervical cancer.
+0: The Citology test result is negative, indicating no abnormal cells were found.
+Biopsy (Biopsy):
+
+1: The biopsy result is positive, confirming the presence of cancerous or precancerous cells in the cervix.
+0: The biopsy result is negative, indicating no cancerous or precancerous cells were found.
+Example Interpretation
+If the API returns:
+
+```json
+{
+    "Hinselmann": 1,
+    "Schiller": 1,
+    "Citology": 1,
+    "Biopsy": 1
+}
+```
+
+This means that all four tests returned positive results, suggesting a high risk of cervical cancer and indicating the need for further medical evaluation and intervention.
+
+If the API returns:
+
+```json
+{
+    "Hinselmann": 0,
+    "Schiller": 0,
+    "Citology": 0,
+    "Biopsy": 0
+}
+```
+
+This means that all four tests returned negative results, suggesting a low risk of cervical cancer based on the current tests.
+
 ## Model Training
 
 To train the model, run the `train_model.py` script. This script processes the data, handles missing values, and trains a Random Forest model. The trained model is then saved to a file named `cervical_cancer_model.pkl`.
