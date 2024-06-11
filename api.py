@@ -31,7 +31,6 @@ class PatientData(BaseModel):
     Dx_Cancer: float
     Dx_CIN: float
     Dx_HPV: float
-    # Añadir la característica faltante
     Dx: float
 
 # Crear la aplicación FastAPI
@@ -55,7 +54,19 @@ def predict(data: PatientData):
         ]])
         
         # Hacer una predicción
-        prediction = model.predict(input_data)
-        return {"prediction": int(prediction[0])}
+        predictions = model.predict(input_data)[0]
+        
+        # Descomponer el resultado en respuestas individuales
+        hinselmann = predictions >= 1
+        schiller = predictions >= 2
+        citology = predictions >= 3
+        biopsy = predictions >= 4
+
+        return {
+            "Hinselmann": int(hinselmann),
+            "Schiller": int(schiller),
+            "Citology": int(citology),
+            "Biopsy": int(biopsy)
+        }
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))

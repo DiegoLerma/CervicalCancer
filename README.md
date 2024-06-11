@@ -1,6 +1,6 @@
 # Cervical Cancer Risk Prediction API
 
-This project provides a REST API for predicting the risk of cervical cancer based on patient data. The API is built using FastAPI and leverages a Random Forest classifier for the prediction.
+This project provides a REST API for predicting the risk of cervical cancer based on patient data. The API is built using FastAPI and leverages a Random Forest classifier for the prediction. Is based in the project [CervicalCancerAnalysis](https://github.com/lauramann/cervicalCancerAnalysis) from [lauramann](https://github.com/lauramann)
 
 ## Table of Contents
 
