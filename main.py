@@ -39,7 +39,6 @@ app = FastAPI()
 # Cargar el modelo
 model = joblib.load('cervical_cancer_model.pkl')
 
-
 @app.get("/health")
 def health_check():
     return {"status": "healthy"}
