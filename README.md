@@ -4,18 +4,22 @@ This project provides a REST API for predicting the risk of cervical cancer base
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running the API](#running-the-api)
-- [API Usage](#api-usage)
-  - [Endpoints](#endpoints)
-  - [Request Example](#request-example)
-  - [Response Example](#response-example)
-- [Model Training](#model-training)
-- [Contributing](#contributing)
-- [License](#license)
+- [Cervical Cancer Risk Prediction API](#cervical-cancer-risk-prediction-api)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Setup](#setup)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Running the API](#running-the-api)
+  - [API Usage](#api-usage)
+    - [Endpoints](#endpoints)
+    - [Request Example](#request-example)
+    - [Response Example](#response-example)
+    - [Interpretation](#interpretation)
+  - [Model Training](#model-training)
+  - [Contributing](#contributing)
+    - [Steps to Contribute](#steps-to-contribute)
+  - [License](#license)
 
 ## Overview
 
@@ -36,7 +40,7 @@ Before you begin, ensure you have the following installed:
 
     ```sh
     git clone https://github.com/DiegoLerma/CervicalCancer.git
-    cd cervical-cancer-prediction-api
+    cd cervical-cancer
     ```
 
 2. Create and activate a virtual environment (recommended):
